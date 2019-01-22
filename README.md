@@ -1,2 +1,2 @@
 # kOmegaSST-V
-Vorticity source term for kOmegaSST of foam-extend-3.2
+Vorticity source term for incompressible kOmegaSST of foam-extend-3.2
