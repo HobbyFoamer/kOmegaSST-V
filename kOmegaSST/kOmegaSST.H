@@ -58,16 +58,6 @@ class kOmegaSST
             dimensionedScalar b1_;
             dimensionedScalar c1_;
 
-            dimensionedScalar Cr1_;
-            dimensionedScalar Cr2_;
-            dimensionedScalar Cr3_;
-
-            dimensionedScalar Ccr1_;
-            dimensionedScalar Ccr2_;
-
-            dimensionedScalar omegaAmb_;
-            dimensionedScalar kAmb_;
-
             Switch F3_;
 
 
