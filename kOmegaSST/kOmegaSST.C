@@ -1,4 +1,4 @@
-#include "kOmegaSST.H"
+#include "kOmegaSSTV.H"
 #include "addToRunTimeSelectionTable.H"
 
 #include "backwardsCompatibilityWallFunctions.H"
@@ -14,12 +14,12 @@ namespace RASModels
 
 // * * * * * * * * * * * * * * Static Data Members * * * * * * * * * * * * * //
 
-defineTypeNameAndDebug(kOmegaSST, 0);
-addToRunTimeSelectionTable(RASModel, kOmegaSST, dictionary);
+defineTypeNameAndDebug(kOmegaSSTV, 0);
+addToRunTimeSelectionTable(RASModel, kOmegaSSTV, dictionary);
 
 // * * * * * * * * * * * * Private Member Functions  * * * * * * * * * * * * //
 
-tmp<volScalarField> kOmegaSST::F1(const volScalarField& CDkOmega) const
+tmp<volScalarField> kOmegaSSTV::F1(const volScalarField& CDkOmega) const
 {
     volScalarField CDkOmegaPlus = max
     (
@@ -45,7 +45,7 @@ tmp<volScalarField> kOmegaSST::F1(const volScalarField& CDkOmega) const
 }
 
 
-tmp<volScalarField> kOmegaSST::F2() const
+tmp<volScalarField> kOmegaSSTV::F2() const
 {
     volScalarField arg2 = min
     (
@@ -61,7 +61,7 @@ tmp<volScalarField> kOmegaSST::F2() const
 }
 
 
-tmp<volScalarField> kOmegaSST::F3() const
+tmp<volScalarField> kOmegaSSTV::F3() const
 {
     tmp<volScalarField> arg3 = min
     (
@@ -73,7 +73,7 @@ tmp<volScalarField> kOmegaSST::F3() const
 }
 
 
-tmp<volScalarField> kOmegaSST::F23() const
+tmp<volScalarField> kOmegaSSTV::F23() const
 {
     tmp<volScalarField> f23(F2());
 
@@ -88,7 +88,7 @@ tmp<volScalarField> kOmegaSST::F23() const
 
 // * * * * * * * * * * * * * * * * Constructors  * * * * * * * * * * * * * * //
 
-kOmegaSST::kOmegaSST
+kOmegaSSTV::kOmegaSSTV
 (
     const volVectorField& U,
     const surfaceScalarField& phi,
@@ -284,7 +284,7 @@ kOmegaSST::kOmegaSST
 
 // * * * * * * * * * * * * * * * Member Functions  * * * * * * * * * * * * * //
 
-tmp<volSymmTensorField> kOmegaSST::R() const
+tmp<volSymmTensorField> kOmegaSSTV::R() const
 {
     return tmp<volSymmTensorField>
     (
@@ -305,7 +305,7 @@ tmp<volSymmTensorField> kOmegaSST::R() const
 }
 
 
-tmp<volSymmTensorField> kOmegaSST::devReff() const
+tmp<volSymmTensorField> kOmegaSSTV::devReff() const
 {
     return tmp<volSymmTensorField>
     (
@@ -325,7 +325,7 @@ tmp<volSymmTensorField> kOmegaSST::devReff() const
 }
 
 
-tmp<fvVectorMatrix> kOmegaSST::divDevReff(volVectorField& U) const
+tmp<fvVectorMatrix> kOmegaSSTV::divDevReff(volVectorField& U) const
 {
     return
     (
@@ -335,7 +335,7 @@ tmp<fvVectorMatrix> kOmegaSST::divDevReff(volVectorField& U) const
 }
 
 
-bool kOmegaSST::read()
+bool kOmegaSSTV::read()
 {
     if (RASModel::read())
     {
@@ -367,7 +367,7 @@ bool kOmegaSST::read()
 }
 
 
-void kOmegaSST::correct()
+void kOmegaSSTV::correct()
 {
     // Bound in case of topological change
     // HJ, 22/Aug/2007
