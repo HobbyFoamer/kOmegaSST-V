@@ -9,9 +9,18 @@ Description
     @verbatim
         http://turbmodels.larc.nasa.gov/sst.html
     @endverbatim
+
+    Additional model coefficients correspond to the following:
+    @verbatim
+        kOmegaSSTCoeffs
+        {
+            vorticitySource     false;
+        }
+    @endverbatim
     
-SourceFiles
-    kOmegaSST.C
+    Additional modifications are activated by switches.
+    Therefore this model is the same as the original kOmegaSST of
+    foam-extend-3.2 unless you activate the modifications in RASProperties.
 */
 
 #ifndef kOmegaSST_H
