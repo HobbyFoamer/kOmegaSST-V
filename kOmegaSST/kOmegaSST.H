@@ -1,7 +1,4 @@
 /*
-Class
-    Foam::incompressible::RASModels::kOmegaSST
-
 Description
     k-omega-SST turbulence model with vorticity source term (SST-V) option.
     
@@ -12,7 +9,7 @@ Description
 
     Additional model coefficients correspond to the following:
     @verbatim
-        kOmegaSSTCoeffs
+        kOmegaSSTVCoeffs
         {
             vorticitySource     false;
         }
@@ -23,8 +20,8 @@ Description
     foam-extend-3.2 unless you activate the modifications in RASProperties.
 */
 
-#ifndef kOmegaSST_H
-#define kOmegaSST_H
+#ifndef kOmegaSSTV_H
+#define kOmegaSSTV_H
 
 #include "RASModel.H"
 #include "wallDist.H"
@@ -42,7 +39,7 @@ namespace RASModels
                            Class kOmega Declaration
 \*---------------------------------------------------------------------------*/
 
-class kOmegaSST
+class kOmegaSSTV
 :
     public RASModel
 {
@@ -137,13 +134,13 @@ class kOmegaSST
 public:
 
     //- Runtime type information
-    TypeName("kOmegaSST");
+    TypeName("kOmegaSSTV");
 
 
     // Constructors
 
         //- Construct from components
-        kOmegaSST
+        kOmegaSSTV
         (
             const volVectorField& U,
             const surfaceScalarField& phi,
@@ -152,7 +149,7 @@ public:
 
 
     //- Destructor
-    virtual ~kOmegaSST()
+    virtual ~kOmegaSSTV()
     {}
 
 
