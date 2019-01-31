@@ -395,7 +395,7 @@ void kOmegaSSTV::correct()
     // original model definition
     // volScalarField GbyNu(tgradU() && twoSymm(tgradU()));
     
-    // OpenFOAM implementation
+    // foam-extend-3.2 implementation
     volScalarField GbyNu(S2);
     
     // vorticity source term
